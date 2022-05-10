@@ -41,7 +41,7 @@ pipeline {
       steps{
         echo "------------>Compile & Unit Tests<------------"
 sh 'chmod +x gradlew'
-sh './gradlew --b ./microservicio/build.gradle test'
+sh './microservicio/gradlew --b ./microservicio/build.gradle test'
 
       }
     }
@@ -62,7 +62,7 @@ sh "${tool name: 'SonarScanner', type:'hudson.plugins.sonar.SonarRunnerInstallat
     stage('Build') {
       steps {
         echo "------------>Build<------------"
-		sh './gradlew --b ./microservicio/build.gradle build -x test'
+		sh './microservicio/gradlew --b ./microservicio/build.gradle build -x test'
       }
     }
 
